@@ -35,7 +35,7 @@ for filename in glob.glob("./src/*.csv"):
             result.append((full_name, full_yomi, csvname))
 r = ""
 for line in result:
-    r += "%s /%s;[vocaloid-dic] %s/\n" % (line[1], line[0], line[2])
+    r += "%s /%s/\n" % (line[1], line[0])
 
 with open("./SKK-JISYO.vocaloid.utf8", "w") as f:
     f.write(r)
