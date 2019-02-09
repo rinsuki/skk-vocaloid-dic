@@ -6,6 +6,13 @@ import os
 
 result = []
 
+def find_duplicate(name, yomi):
+    for r in result:
+        if r[0] == name and r[1] == yomi:
+            return True
+        print(r)
+    return False
+
 for filename in glob.glob("./src/*.csv"):
     with open(filename, "r") as f:
         reader = csv.reader(f)
@@ -14,15 +21,16 @@ for filename in glob.glob("./src/*.csv"):
             full_name = ""
             full_yomi = ""
             for (name, yomi) in zip(*[iter(row)]*2):
-                print(name, yomi)
+                full_name += name
+                full_yomi += yomi
+                if find_duplicate(name, yomi):
+                    continue
                 if re.search(r"^[\u3040-\u3096]*$", yomi) is None:
                     print("--------------")
                     print("ERR: よみにひらがなでない文字が含まれています:", yomi)
                     exit(1)
                 if re.search(r"^([\u3041-\u3096]|[\u30a1-\u30fa])+$", name) is None: # よみがカタカナ/ひらがなだけだったらスルー
                     result.append((name, yomi, csvname))
-                full_name += name
-                full_yomi += yomi
             result.append((full_name, full_yomi, csvname))
 r = ""
 for line in result:
