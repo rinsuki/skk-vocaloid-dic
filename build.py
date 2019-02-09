@@ -3,6 +3,7 @@ import sys
 import glob
 import re
 import os
+import subprocess
 
 result = []
 
@@ -38,3 +39,4 @@ for line in result:
 
 with open("./SKK-JISYO.vocaloid.utf8", "w") as f:
     f.write(r)
+    subprocess.run(["skkdic-sort"], input=r.encode("UTF-8"), stdout=f).check_returncode()
