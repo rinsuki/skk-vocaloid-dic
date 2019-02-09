@@ -7,6 +7,8 @@ VOCALOID、VOICEROID、一部のUTAU音源などのキャラ名のうち、名�
 - [クリプトン・フューチャー・メディア株式会社](https://www.crypton.co.jp/) の VOCALOID
 - [株式会社インターネット](https://www.ssw.co.jp/) の VOCALOID
 - [株式会社AHS](https://www.ah-soft.com) の VOICEROID, VOCALOID
+- [ヤマハ株式会社](https://jp.yamaha.com) の VOCALOID
+- キューンレコード の VOCALOID
 
 ## 注意
 
